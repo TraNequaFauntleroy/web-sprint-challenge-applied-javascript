@@ -1,3 +1,5 @@
+const topics = ['javascript', 'bootstrap', 'technology']
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -13,6 +15,24 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+  const topicsDiv = document.createElement('div');
+  const div1 = document.createElement('div');
+  const div2 = document.createElement('div');
+  const div3 = document.createElement('div');
+
+  topicsDiv.classList.add('topics');
+  div1.classList.add('tab');
+  div2.classList.add('tab');
+  div3.classList.add('tab');
+
+  div1.textContent = topics[0];
+  div2.textContent = topics[1];
+  div3.textContent = topics[2];
+
+
+
+
 }
 
 const tabsAppender = (selector) => {

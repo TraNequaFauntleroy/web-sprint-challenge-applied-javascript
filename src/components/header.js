@@ -42,7 +42,7 @@ const headerAppender = (selector) => {
   //
   const headerDiv = Header('We Crushed This Sprint', '8/06/2021', '80&deg');
   console.log(headerDiv);
-  document.querySelector('header-container').appendChild(headerDiv);
+  document.querySelector('.header-container').appendChild(headerDiv);
 }
 
 export { Header, headerAppender }
