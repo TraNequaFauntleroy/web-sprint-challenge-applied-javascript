@@ -15,24 +15,28 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-
+  //creates elements
   const topicsDiv = document.createElement('div');
   const div1 = document.createElement('div');
   const div2 = document.createElement('div');
   const div3 = document.createElement('div');
-
+  //add classes
   topicsDiv.classList.add('topics');
   div1.classList.add('tab');
   div2.classList.add('tab');
   div3.classList.add('tab');
-
+  //adds content
   div1.textContent = topics[0];
   div2.textContent = topics[1];
   div3.textContent = topics[2];
+  //assembly heirarchy
+  const tabs = document.querySelector('.tabs-container');
+  tabs.appendChild(topicsDiv);
+  topicsDiv.appendChild(div1);
+  topicsDiv.appendChild(div2);
+  topicsDiv.appendChild(div3);
 
-
-
-
+  return topicsDiv
 }
 
 const tabsAppender = (selector) => {
