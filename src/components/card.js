@@ -16,7 +16,36 @@ const Card = (article) => {
   //     <span>By { authorName }</span>
   //   </div>
   // </div>
-  //
+
+  //create elements
+  const card = document.createElement('div');
+  const headline = document.createElement('div');
+  const author = document.createElement('div');
+  const imgCon = document.createElement('div');
+  const image = document.createElement('img');
+  const name = document.createElement('span');
+  //add classes and sources
+  card.classList.add('card');
+  headline.classList.add('headline');
+  author.classList.add('author');
+  imgCon.classList.add('img-container');
+  image.src = article.authorPhoto;
+  //add content
+  headline.textContent = article.headline;
+  name.textContent = article.authorName;
+  // build hierachy 
+  const cardsCon = document.querySelector('.cards-container');
+  cardsCon.appendChild(card);
+  card.appendChild(headline);
+  card.appendChild(author);
+  author.appendChild(imgCon);
+  imgCon.appendChild(image);
+  //add event listener
+  card.addEventListener('click', event =>{
+    console.log(article.headline);
+  });
+
+  return card
 }
 
 const cardAppender = (selector) => {

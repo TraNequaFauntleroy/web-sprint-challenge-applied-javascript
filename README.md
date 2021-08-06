@@ -38,7 +38,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 **Steps Required for MVP:**
 
 - [X] Steps 1 and 2 are explained inside the `src/components/header.js` file.
-- [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
+- [X] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
@@ -70,6 +70,6 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 3. What is an event listener?
     A: An event listener is a procedure in JavaScript that waits for an event to occur. 
 4. Why would we convert a NodeList into an Array?
-    A: So we can have access to advances array methods like map, filter, forEach. Node list itself is a collection of DOM nodes, and has limitations because its not an array.
+    A: So we can have access to advances array methods like map, filter, forEach. Node list itself is a collection of DOM nodes, and has limitations because it's not an array.
 5. What is a component?
     A: Like a function, Components are independent and reusable bits of code.
