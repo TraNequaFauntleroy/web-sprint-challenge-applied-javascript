@@ -1,4 +1,5 @@
-const topics = ['javascript', 'bootstrap', 'technology']
+import axios from "axios";
+import { doc } from "prettier";
 
 const Tabs = (topics) => {
   // TASK 3
@@ -47,6 +48,18 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  axios.get('http://localhost:5000/api/topics')
+  .then(response => {
+      const newTab = Tabs(response.data.topics)
+      document.querySelector('.tabs-container').appendChild(newTab)
+  })
+  .catch(err => {
+  console.log(err)
+  })
+
 }
+
+// tabsAppender();  UNCOMMENT IF YOU WANT ALL TOPICS TO SHOW. BUT IF YOU ONLY WANT 3 TOPICS (PER THE EXAMPLE ON LINES 14-16), LEAVE COMMENTED OUT
+
 
 export { Tabs, tabsAppender }
