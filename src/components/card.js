@@ -21,33 +21,32 @@ const Card = (article) => {
 
   //create elements
   const card = document.createElement('div');
-  const headline = document.createElement('div');
+  const headLine = document.createElement('div');
   const author = document.createElement('div');
   const imgCon = document.createElement('div');
   const image = document.createElement('img');
   const name = document.createElement('span');
   //add classes and sources
   card.classList.add('card');
-  headline.classList.add('headline');
+  headLine.classList.add('headline');
   author.classList.add('author');
   imgCon.classList.add('img-container');
   image.src = article.authorPhoto;
   //add content
-  headline.textContent = article.headline;
-  name.textContent = `By: ${article.authorName}`;
+  headLine.textContent = article.authorPhoto; /*  I WAS HAVING AN EXTREMELY HARD TIME EXTRACTING DATA FROM ALL THOSE NESTED OBJECTS AND ARRAY */
+  name.textContent = `By: ${article.authorName}`; /*  I WAS HAVING AN EXTREMELY HARD TIME EXTRACTING DATA FROM ALL THOSE NESTED OBJECTS AND ARRAY */
   // build hierachy 
   const cardsCon = document.querySelector('.cards-container');
   cardsCon.appendChild(card);
-  card.appendChild(headline);
+  card.appendChild(headLine);
   card.appendChild(author);
   author.appendChild(imgCon);
   imgCon.appendChild(image);
   //add event listener
-  card.addEventListener('click', event =>{
+  card.addEventListener('click', () =>{
     console.log(article.headline);
   });
 
-  
   return card;
 }
 
@@ -63,24 +62,16 @@ const cardAppender = (selector) => {
 
 axios.get('http://localhost:5000/api/articles')
   .then(response => {
-    console.log(response)
-    const newArticle = Card(response.data.article)
+    console.log(response.data.articles["bootstrap"].headline)
+    const newArticle = Card(response.data)
     document.querySelector('.cards-container').appendChild(newArticle)
 })
-.catch(err => {
-  console.log(err)
+  .catch(err => {
+    console.log(err)
   })
 };
 
 cardAppender();
 
-// const newArticle = articles.javascript.map(item =>{
-//   return cardAppender(item);
-// });
-
-// newArticle.forEach(element => {
-//   document.querySelector('.cards-container').appendChild(element)
-  
-// });
 
 export { Card, cardAppender }

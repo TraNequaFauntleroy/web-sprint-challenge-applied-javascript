@@ -59,7 +59,7 @@ const tabsAppender = (selector) => {
 
 }
 
-// tabsAppender();  UNCOMMENT IF YOU WANT ALL TOPICS TO SHOW. BUT IF YOU ONLY WANT 3 TOPICS (PER THE EXAMPLE ON LINES 14-16), LEAVE COMMENTED OUT
+tabsAppender(); 
 
 
 export { Tabs, tabsAppender }
